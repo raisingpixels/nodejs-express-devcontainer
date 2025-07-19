@@ -1,0 +1,253 @@
+{
+  "name": "Node.js Express Parent Developer Environment",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // AI Assistants - Your fragmented-time superpowers
+        "anthropic.claude-code",
+        "github.copilot",
+        "github.copilot-chat",
+
+        // Node.js and Express development
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-json",
+        "bradlc.vscode-tailwindcss",
+
+        // API development and testing
+        "humao.rest-client",
+        "42crunch.vscode-openapi",
+        "ms-vscode.vscode-thunder-client",
+
+        // Database and data tools
+        "ms-mssql.mssql",
+        "mtxr.sqltools",
+        "formulahendry.code-runner",
+
+        // Git workflow optimization
+        "eamodio.gitlens",
+        "github.vscode-pull-request-github",
+        "ms-vscode.vscode-merge-conflict",
+
+        // Development utilities
+        "ms-vscode.vscode-npm-script",
+        "christian-kohler.npm-intellisense",
+        "ms-vscode.vscode-yaml",
+        "redhat.vscode-yaml",
+
+        // Productivity boosters
+        "christian-kohler.path-intellisense",
+        "ms-vscode.vscode-docker",
+        "ms-vscode.remote-containers",
+
+        // Theme and comfort
+        "pkief.material-icon-theme"
+      ],
+      "settings": {
+        // Auto-save everything - the parent developer's safety net
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
+        "git.autofetch": true,
+        "git.enableSmartCommit": true,
+        "git.confirmSync": false,
+
+        // Format on save - one less thing to think about
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "always",
+          "source.organizeImports": "always"
+        },
+
+        // Visual improvements - because you deserve a nice workspace
+        "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+        "editor.fontSize": 14,
+        "editor.fontLigatures": true,
+        "editor.lineHeight": 1.5,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": true,
+        "editor.bracketPairColorization.enabled": true,
+        "editor.guides.bracketPairs": true,
+
+        // Node.js and TypeScript specific settings
+        "typescript.preferences.importModuleSpecifier": "relative",
+        "typescript.preferences.includePackageJsonAutoImports": "auto",
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "typescript.suggest.autoImports": true,
+        "typescript.disableAutomaticTypeAcquisition": false,
+
+        // Intelligent suggestions - help when brain is tired
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": true,
+          "strings": true
+        },
+        "editor.suggestOnTriggerCharacters": true,
+        "editor.acceptSuggestionOnCommitCharacter": true,
+        "editor.acceptSuggestionOnEnter": "on",
+        "editor.tabCompletion": "on",
+        "editor.snippetSuggestions": "top",
+        "editor.wordBasedSuggestions": "matchingDocuments",
+
+        // Better diff viewing for when you return to old work
+        "diffEditor.ignoreTrimWhitespace": false,
+        "diffEditor.renderSideBySide": true,
+
+        // Optimize for quick context switching
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.showTabs": "multiple",
+        "workbench.editor.wrapTabs": true,
+
+        // File management for chaos
+        "explorer.confirmDelete": false,
+        "explorer.confirmDragAndDrop": false,
+        "explorer.sortOrder": "type",
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.patterns": {
+          "*.ts": "${capture}.js, ${capture}.d.ts.map, ${capture}.d.ts, ${capture}.js.map",
+          "*.js": "${capture}.js.map, ${capture}.d.ts",
+          "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .npmrc, .yarnrc",
+          "*.env": ".env.local, .env.development, .env.production, .env.test",
+          "docker-compose.yml": "docker-compose.*.yml, Dockerfile, .dockerignore",
+          "README.md": "*.md"
+        },
+
+        // File handling - keep it tidy
+        "files.trimTrailingWhitespace": true,
+        "files.trimFinalNewlines": true,
+        "files.insertFinalNewline": true,
+        "files.exclude": {
+          "**/.git": true,
+          "**/.DS_Store": true,
+          "**/node_modules": true,
+          "**/build": true,
+          "**/dist": true,
+          "**/coverage": true,
+          "**/logs": true,
+          "**/.vscode": false
+        },
+        "files.watcherExclude": {
+          "**/.git/objects/**": true,
+          "**/.git/subtree-cache/**": true,
+          "**/node_modules/*/**": true,
+          "**/build/**": true,
+          "**/dist/**": true,
+          "**/coverage/**": true,
+          "**/logs/**": true
+        },
+        "search.exclude": {
+          "**/node_modules": true,
+          "**/build": true,
+          "**/dist": true,
+          "**/coverage": true,
+          "**/logs": true,
+          "**/*.code-search": true
+        },
+
+        // Terminal optimization
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.copyOnSelection": true,
+        "terminal.integrated.fontSize": 13,
+        "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', Menlo",
+        "terminal.integrated.cursorBlinking": true,
+        "terminal.integrated.cursorStyle": "line",
+        "terminal.integrated.scrollback": 10000,
+
+        // GitHub integration
+        "github.copilot.enable": {
+          "*": true,
+          "plaintext": false,
+          "markdown": true,
+          "javascript": true,
+          "typescript": true
+        },
+
+        // Theme settings for late-night coding (with auto dark mode)
+        "window.autoDetectColorScheme": true,
+        "workbench.colorTheme": "Monokai",
+        "workbench.iconTheme": "material-icon-theme",
+        "workbench.preferredDarkColorTheme": "Monokai",
+        "workbench.preferredLightColorTheme": "Quiet Light",
+
+        // Prettier configuration
+        "prettier.singleQuote": true,
+        "prettier.semi": true,
+        "prettier.tabWidth": 2,
+        "prettier.trailingComma": "es5",
+        "prettier.arrowParens": "avoid",
+
+        // ESLint settings
+        "eslint.run": "onSave",
+        "eslint.validate": [
+          "javascript",
+          "typescript"
+        ],
+
+        // REST Client settings for API testing
+        "rest-client.rememberCookiesForSubsequentRequests": true,
+        "rest-client.enableTelemetry": false,
+
+        // Docker integration
+        "docker.showStartPage": false,
+
+        // Auto imports and suggestions
+        "typescript.suggest.includeCompletionsForModuleExports": true,
+        "javascript.suggest.includeCompletionsForModuleExports": true,
+
+        // NPM script integration
+        "npm.enableScriptExplorer": true,
+        "npm.scriptExplorerAction": "run",
+
+        // JSON schema validation
+        "json.schemas": [
+          {
+            "fileMatch": ["package.json"],
+            "url": "https://json.schemastore.org/package.json"
+          },
+          {
+            "fileMatch": ["tsconfig.json"],
+            "url": "https://json.schemastore.org/tsconfig.json"
+          }
+        ]
+      }
+    }
+  },
+  "containerEnv": {
+    "GIT_EDITOR": "code --wait",
+    "NODE_ENV": "development"
+  },
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code nodemon typescript ts-node && git config --global user.email 'your@email.com' && git config --global user.name 'Your Name' && [ -f package.json ] && npm install || true",
+  "remoteUser": "node",
+  "forwardPorts": [3000, 3001, 8000, 5432, 27017],
+  "portsAttributes": {
+    "3000": {
+      "label": "Express Server",
+      "onAutoForward": "notify"
+    },
+    "3001": {
+      "label": "Express Server (Alt)",
+      "onAutoForward": "ignore"
+    },
+    "8000": {
+      "label": "API Server",
+      "onAutoForward": "ignore"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "ignore"
+    },
+    "27017": {
+      "label": "MongoDB",
+      "onAutoForward": "ignore"
+    }
+  },
+  "mounts": [
+    "source=nodejs-bashhistory,target=/home/node/.bash_history,type=volume"
+  ]
+}
